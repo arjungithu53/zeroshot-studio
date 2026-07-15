@@ -71,18 +71,22 @@ A full breakdown of every agent, every phase, and every data-flow diagram is in 
 ## Repository structure
 
 ```
-backend/services/
-├── pre_production/          # Strategy -> creative concepts -> script (3 phases, standalone FastAPI apps)
-│   ├── phase-1/              # Brand strategy (13 agents)
-│   ├── phase-2/              # Creative ideation (25 agents)
-│   └── phase-3/              # Script + shotlist (12 agents)
-└── production/               # Script -> assets -> shot images -> video (FastAPI + Celery service)
-    └── app/
-        ├── api/v1/endpoints/ # REST routes
-        ├── services/         # Phase 1-4 agent implementations
-        ├── tasks/            # Celery task definitions
-        └── models/           # MongoDB document models
+backend/
+├── shared/                   # Cross-cutting utilities: logging, CORS, error handlers, admin auth
+└── services/
+    ├── pre_production/       # Strategy -> creative concepts -> script (3 phases, standalone FastAPI apps)
+    │   ├── phase-1/           # Brand strategy (13 agents)
+    │   ├── phase-2/           # Creative ideation (25 agents)
+    │   └── phase-3/           # Script + shotlist (12 agents)
+    └── production/            # Script -> assets -> shot images -> video (FastAPI + Celery service)
+        └── app/
+            ├── api/v1/endpoints/ # REST routes
+            ├── services/         # Phase 1-4 agent implementations
+            ├── tasks/            # Celery task definitions
+            └── models/           # MongoDB document models
 
+infrastructure/               # MongoDB + S3 client factories used by the production service
+tools/                        # Standalone Streamlit apps for the human image/video review checkpoints
 docs/                         # Deep-dive architecture, API reference, and design docs
 sample-output/                # A real script, shotlist, and rendered clip from an actual pipeline run
 ```
