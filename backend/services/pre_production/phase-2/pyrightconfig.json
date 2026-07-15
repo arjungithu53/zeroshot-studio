@@ -1,0 +1,33 @@
+{
+  "extraPaths": [
+    "creative_constraint_manager",
+    "constraint_priority_resolver",
+    "idea_core_preservation",
+    "brand_guideline_alignment",
+    "video_type_selection_agent",
+    "duration_structuring_agent",
+    "scene_deconstruction_agent",
+    "scene_role_enumeration_agent",
+    "scene_role_selector_agent",
+    "temporal_placement_solver_agent",
+    "scene_integration_plan",
+    "narrative_skeleton_generator",
+    "narrative_skeleton_planner",
+    "narrative_archetype_selector",
+    "visual_structure_agent",
+    "visual_motif_selector",
+    "platform_behavior_optimizer",
+    "pattern_interrupt_generator",
+    "viral_mechanics_agent",
+    "mental_model_transformer",
+    "intergalactic_thinking_agent",
+    "diversity_manifest_generator",
+    "concept_generator",
+    "phase2_concept_reviewer",
+    "offer_narrative_integrator",
+    "concept_categorization_agent",
+    "concept_diversity_controller",
+    "interest_filter_agent",
+    "concept_kill_switch"
+  ]
+}

@@ -1,0 +1,1 @@
+from diversity_manifest_generator import run_diversity_manifest_generator
