@@ -84,9 +84,22 @@ backend/services/
         └── models/           # MongoDB document models
 
 docs/                         # Deep-dive architecture, API reference, and design docs
+sample-output/                # A real script, shotlist, and rendered clip from an actual pipeline run
 ```
 
-## Setup
+## Sample output
+
+This isn't a demo you can spin up locally (see [Running this yourself](#running-this-yourself) below) — so here's what one pipeline run actually produced, from a generic test brief, unedited:
+
+- [`sample-output/concept_a_script.fountain`](sample-output/concept_a_script.fountain) — the generated script in Fountain screenplay format, with camera direction, VO, and SFX/music cues
+- [`sample-output/concept_a_shotlist.csv`](sample-output/concept_a_shotlist.csv) — the structured shot-by-shot breakdown (camera motion, angle, dialogue, product presence) derived from that script
+- [`sample-output/shot_3.3.1_sample_clip.mp4`](sample-output/shot_3.3.1_sample_clip.mp4) — one rendered shot from that shotlist, generated via Veo
+
+## Running this yourself
+
+Being upfront about this: there's no `docker-compose.yml` and no seed/demo data, so this isn't a clone-and-run project. To actually execute the pipeline you need your own accounts and credentials for **all** of: MongoDB Atlas, AWS (S3 + SQS), Google Cloud (Gemini + Imagen + Veo — Veo access is separately gated by Google), and optionally OpenAI/Anthropic/Supabase depending on which agents you exercise. The three Pre-Production phases are also independent standalone services that need to be started and pointed at each other manually. If you just want to see what it does, the [sample output](#sample-output) above and the [architecture docs](docs/ARCHITECTURE.md) are the fastest path — running it end-to-end is a real infrastructure project in itself.
+
+If you do want to run it:
 
 **Requirements:** Python 3.11+, MongoDB Atlas cluster, Redis, AWS account (S3 + SQS), Google Cloud API access (Gemini / Imagen / Veo).
 
